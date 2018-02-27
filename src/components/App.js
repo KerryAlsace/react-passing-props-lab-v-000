@@ -32,16 +32,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    const fruit = !this.state.currentFilter || this.state.currentFilter === 'all'
-      ? this.state.fruit
-      : this.state.fruit.filter(i => i.fruit_type === this.state.currentFilter)
-
     return (
       <FruitBasket
         updateFilterCallback={this.handleFilterChange}
         filters={this.state.filters}
-        currentFilter={this.state.currentFilter}
-        fruit={fruit} />
+        filter={this.state.currentFilter}
+        fruit={this.state.fruit} />
     )
   }
 }
